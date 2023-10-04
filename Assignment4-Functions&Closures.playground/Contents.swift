@@ -149,10 +149,7 @@ print("")
 
 // 10. function-ს გადავცეთ String-ების array და დაგვიბრუნოს მხოლოდ კენტი რიცხვების მასივი. გამოიყენეთ high order functions.
 func onlyOddNumbersWillSurvive(randomArray: [String]) {
-    var onlyNumbers = randomArray.compactMap { string in
-        Int(string)
-    }
-    onlyNumbers.removeAll() { $0.isMultiple(of: 2) }
+    var onlyNumbers = randomArray.compactMap { Int($0) }.filter { ($0 % 2) != 0 }
     print("Task 10: Odd numbers in this array are: \(onlyNumbers)")
 }
 
